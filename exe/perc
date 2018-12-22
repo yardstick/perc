@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+
+require 'perc'
+require 'perc/cli'
+require './config/application'
+
+Bundler.require(:default, Perc.app.env)
+Perc.app.boot
+
+Perc::Cli.start(ARGV)
